@@ -1,0 +1,226 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wsdl:definitions targetNamespace="http://127.0.0.1:56898/ormrpc/services/WSTableOperFacade" xmlns:apachesoap="http://xml.apache.org/xml-soap" xmlns:impl="http://127.0.0.1:56898/ormrpc/services/WSTableOperFacade" xmlns:intf="http://127.0.0.1:56898/ormrpc/services/WSTableOperFacade" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:tns1="urn:client.tableoperfacade" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:wsdlsoap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+<!--WSDL created by Apache Axis version: 1.4
+Built on Apr 22, 2006 (06:55:48 PDT)-->
+ <wsdl:types>
+  <schema targetNamespace="urn:client.tableoperfacade" xmlns="http://www.w3.org/2001/XMLSchema">
+   <import namespace="http://schemas.xmlsoap.org/soap/encoding/"/>
+   <complexType name="WSInvokeException">
+    <sequence/>
+   </complexType>
+  </schema>
+ </wsdl:types>
+
+   <wsdl:message name="importTableResponse">
+
+      <wsdl:part name="importTableReturn" type="xsd:string">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="exportTableRequest">
+
+      <wsdl:part name="jsonData" type="xsd:string">
+
+      </wsdl:part>
+
+      <wsdl:part name="dateFrom" type="xsd:string">
+
+      </wsdl:part>
+
+      <wsdl:part name="dateTo" type="xsd:string">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="exportTableResponse">
+
+      <wsdl:part name="exportTableReturn" type="xsd:string">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="getColumnCountRequest">
+
+      <wsdl:part name="jsonData" type="xsd:string">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="WSInvokeException">
+
+      <wsdl:part name="fault" type="tns1:WSInvokeException">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="importTableRequest">
+
+      <wsdl:part name="jsonData" type="xsd:string">
+
+      </wsdl:part>
+
+      <wsdl:part name="dateFrom" type="xsd:string">
+
+      </wsdl:part>
+
+      <wsdl:part name="dateTo" type="xsd:string">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="getColumnCountResponse">
+
+      <wsdl:part name="getColumnCountReturn" type="xsd:string">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:portType name="WSTableOperFacadeSrvProxy">
+
+      <wsdl:operation name="getColumnCount" parameterOrder="jsonData">
+
+         <wsdl:input message="impl:getColumnCountRequest" name="getColumnCountRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:getColumnCountResponse" name="getColumnCountResponse">
+
+       </wsdl:output>
+
+         <wsdl:fault message="impl:WSInvokeException" name="WSInvokeException">
+
+       </wsdl:fault>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="importTable" parameterOrder="jsonData dateFrom dateTo">
+
+         <wsdl:input message="impl:importTableRequest" name="importTableRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:importTableResponse" name="importTableResponse">
+
+       </wsdl:output>
+
+         <wsdl:fault message="impl:WSInvokeException" name="WSInvokeException">
+
+       </wsdl:fault>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="exportTable" parameterOrder="jsonData dateFrom dateTo">
+
+         <wsdl:input message="impl:exportTableRequest" name="exportTableRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:exportTableResponse" name="exportTableResponse">
+
+       </wsdl:output>
+
+         <wsdl:fault message="impl:WSInvokeException" name="WSInvokeException">
+
+       </wsdl:fault>
+
+      </wsdl:operation>
+
+   </wsdl:portType>
+
+   <wsdl:binding name="WSTableOperFacadeSoapBinding" type="impl:WSTableOperFacadeSrvProxy">
+
+      <wsdlsoap:binding style="rpc" transport="http://schemas.xmlsoap.org/soap/http"/>
+
+      <wsdl:operation name="getColumnCount">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="getColumnCountRequest">
+
+            <wsdlsoap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://webservice.tab.custom.eas.kingdee.com" use="encoded"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="getColumnCountResponse">
+
+            <wsdlsoap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://127.0.0.1:56898/ormrpc/services/WSTableOperFacade" use="encoded"/>
+
+         </wsdl:output>
+
+         <wsdl:fault name="WSInvokeException">
+
+            <wsdlsoap:fault encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" name="WSInvokeException" namespace="http://127.0.0.1:56898/ormrpc/services/WSTableOperFacade" use="encoded"/>
+
+         </wsdl:fault>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="importTable">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="importTableRequest">
+
+            <wsdlsoap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://webservice.tab.custom.eas.kingdee.com" use="encoded"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="importTableResponse">
+
+            <wsdlsoap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://127.0.0.1:56898/ormrpc/services/WSTableOperFacade" use="encoded"/>
+
+         </wsdl:output>
+
+         <wsdl:fault name="WSInvokeException">
+
+            <wsdlsoap:fault encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" name="WSInvokeException" namespace="http://127.0.0.1:56898/ormrpc/services/WSTableOperFacade" use="encoded"/>
+
+         </wsdl:fault>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="exportTable">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="exportTableRequest">
+
+            <wsdlsoap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://webservice.tab.custom.eas.kingdee.com" use="encoded"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="exportTableResponse">
+
+            <wsdlsoap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://127.0.0.1:56898/ormrpc/services/WSTableOperFacade" use="encoded"/>
+
+         </wsdl:output>
+
+         <wsdl:fault name="WSInvokeException">
+
+            <wsdlsoap:fault encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" name="WSInvokeException" namespace="http://127.0.0.1:56898/ormrpc/services/WSTableOperFacade" use="encoded"/>
+
+         </wsdl:fault>
+
+      </wsdl:operation>
+
+   </wsdl:binding>
+
+   <wsdl:service name="WSTableOperFacadeSrvProxyService">
+
+      <wsdl:port binding="impl:WSTableOperFacadeSoapBinding" name="WSTableOperFacade">
+
+         <wsdlsoap:address location="http://127.0.0.1:56898/ormrpc/services/WSTableOperFacade"/>
+
+      </wsdl:port>
+
+   </wsdl:service>
+
+</wsdl:definitions>

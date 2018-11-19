@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wsdl:definitions targetNamespace="http://192.168.10.220:6886/ormrpc/services/WSAdminOrgUnitUserFacade" xmlns:apachesoap="http://xml.apache.org/xml-soap" xmlns:impl="http://192.168.10.220:6886/ormrpc/services/WSAdminOrgUnitUserFacade" xmlns:intf="http://192.168.10.220:6886/ormrpc/services/WSAdminOrgUnitUserFacade" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:tns1="urn:client.adminorgunituserfacade" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:wsdlsoap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+<!--WSDL created by Apache Axis version: 1.4
+Built on Apr 22, 2006 (06:55:48 PDT)-->
+ <wsdl:types>
+  <schema targetNamespace="urn:client.adminorgunituserfacade" xmlns="http://www.w3.org/2001/XMLSchema">
+   <import namespace="http://schemas.xmlsoap.org/soap/encoding/"/>
+   <complexType name="WSInvokeException">
+    <sequence/>
+   </complexType>
+  </schema>
+ </wsdl:types>
+
+   <wsdl:message name="WSInvokeException">
+
+      <wsdl:part name="fault" type="tns1:WSInvokeException">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="getUserByAdminOrgResponse">
+
+      <wsdl:part name="getUserByAdminOrgReturn" type="xsd:string">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="getUserByAdminOrgRequest">
+
+      <wsdl:part name="solutionInfo" type="xsd:string">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:portType name="WSAdminOrgUnitUserFacadeSrvProxy">
+
+      <wsdl:operation name="getUserByAdminOrg" parameterOrder="solutionInfo">
+
+         <wsdl:input message="impl:getUserByAdminOrgRequest" name="getUserByAdminOrgRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:getUserByAdminOrgResponse" name="getUserByAdminOrgResponse">
+
+       </wsdl:output>
+
+         <wsdl:fault message="impl:WSInvokeException" name="WSInvokeException">
+
+       </wsdl:fault>
+
+      </wsdl:operation>
+
+   </wsdl:portType>
+
+   <wsdl:binding name="WSAdminOrgUnitUserFacadeSoapBinding" type="impl:WSAdminOrgUnitUserFacadeSrvProxy">
+
+      <wsdlsoap:binding style="rpc" transport="http://schemas.xmlsoap.org/soap/http"/>
+
+      <wsdl:operation name="getUserByAdminOrg">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="getUserByAdminOrgRequest">
+
+            <wsdlsoap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://webservice.app.permission.base.eas.kingdee.com" use="encoded"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="getUserByAdminOrgResponse">
+
+            <wsdlsoap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://192.168.10.220:6886/ormrpc/services/WSAdminOrgUnitUserFacade" use="encoded"/>
+
+         </wsdl:output>
+
+         <wsdl:fault name="WSInvokeException">
+
+            <wsdlsoap:fault encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" name="WSInvokeException" namespace="http://192.168.10.220:6886/ormrpc/services/WSAdminOrgUnitUserFacade" use="encoded"/>
+
+         </wsdl:fault>
+
+      </wsdl:operation>
+
+   </wsdl:binding>
+
+   <wsdl:service name="WSAdminOrgUnitUserFacadeSrvProxyService">
+
+      <wsdl:port binding="impl:WSAdminOrgUnitUserFacadeSoapBinding" name="WSAdminOrgUnitUserFacade">
+
+         <wsdlsoap:address location="http://192.168.10.220:6886/ormrpc/services/WSAdminOrgUnitUserFacade"/>
+
+      </wsdl:port>
+
+   </wsdl:service>
+
+</wsdl:definitions>

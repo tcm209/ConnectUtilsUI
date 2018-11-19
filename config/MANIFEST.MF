@@ -1,0 +1,20 @@
+Manifest-Version: 1.0
+Rsrc-Class-Path: ./ activation.jar axis-ant.jar axis.jar bsf.jar casto
+ r-0.9.5.2.jar classes12.jar commons-beanutils-1.7.0.jar commons-codec
+ -1.2.jar commons-collections-3.1.jar commons-discovery-0.2.jar common
+ s-httpclient-3.0-rc2.jar commons-lang-2.6.jar commons-logging-1.0.4.j
+ ar commons-logging.jar commons-net-1.0.0-dev.jar DatePicker-V0.99-200
+ 6.09.01.jar datepicker.jar ezmorph-1.0.3.jar fastjson-1.2.4.jar httpu
+ nit.jar ibmjsse.jar javax.jms.jar javax.wsdl_1.6.2.v201012040545.jar 
+ JimiProClasses.jar json-lib-2.4-jdk15.jar junit-3.8.1.jar log4j-1.2.8
+ .jar mailapi_1_3_1.jar ojdbc5.jar ojdbc6.jar org-apache-commons-loggi
+ ng.jar org.apache.commons.logging_1.1.1.v201101211721.jar poi-3.10-FI
+ NAL-20140208.jar poi-examples-3.10-FINAL-20140208.jar poi-excelant-3.
+ 10-FINAL-20140208.jar poi-ooxml-3.10-FINAL-20140208.jar poi-ooxml-sch
+ emas-3.10-FINAL-20140208.jar poi-scratchpad-3.10-FINAL-20140208.jar s
+ aaj.jar servlet-api.jar servlet.jar wsdl4j-1.5.1.jar axis-jaxrpc-1.4.
+ jar
+Class-Path: .
+Rsrc-Main-Class: com.connect.ui.client.LoginSingleUI
+Main-Class: org.eclipse.jdt.internal.jarinjarloader.JarRsrcLoader
+
